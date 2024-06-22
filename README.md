@@ -1,8 +1,6 @@
 # assertutils.h
 A tiny C logging library which also implements exceptions and assertions
-
-
-![Screenshot_2024-06-22_02-53-30](https://github.com/TsukiGva2/assertutils/assets/71048858/dd6e2ff9-5374-4954-be73-418c7e1838dc)
+![Screenshot_2024-06-22_03-26-05](https://github.com/TsukiGva2/assertutils/assets/71048858/b453759f-352d-48eb-a297-d4a779a07fd3)
 
 # Objective
 
