@@ -37,7 +37,7 @@ void log_statusf(const char* fn, const char* file, int line, const char* msg, ..
 
 }
 
-#ifndef __ASSERTUTILS_RELEASE__
+#ifndef ASSERTUTILS_RELEASE
 void log_err(const char* msg, const char* fn, const char* file, int line) {
 	fprintf(stderr, "\033[31;1mFAIL\t\033[0m\033[1m%.10s\t:%d [\033[32;1m%s\033[0m\033[1m] => \033[31;1m'%s'\033[0m\n", file, line, fn, msg);
 }

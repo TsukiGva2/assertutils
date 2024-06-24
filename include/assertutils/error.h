@@ -13,7 +13,7 @@ void log_status(const char* msg, const char* fn, const char* file, int line);
 void log_okf(const char* fn, const char* file, int line, const char* msg, ...);
 void log_statusf(const char* fn, const char* file, int line, const char* msg, ...);
 
-#ifndef __ASSERTUTILS_RELEASE__
+#ifndef ASSERTUTILS_RELEASE
 void log_err(const char* msg, const char* fn, const char* file, int line);
 void log_warn(const char* msg, const char* fn, const char* file, int line);
 
@@ -21,7 +21,7 @@ void log_errf(const char* fn, const char* file, int line, const char* msg, ...);
 void log_warnf(const char* fn, const char* file, int line, const char* msg, ...);
 #endif
 
-#ifndef __ASSERTUTILS_RELEASE__
+#ifndef ASSERTUTILS_RELEASE
 
 #define ERR(msg) log_err(msg, __func__, __FILE__, __LINE__)
 #define WARN(msg) log_warn(msg, __func__, __FILE__, __LINE__)
@@ -43,11 +43,11 @@ void log_warnf(const char* fn, const char* file, int line, const char* msg, ...)
 #define NICE(msg) log_ok(msg, __func__, "?", 0)
 #define INFO(msg) log_status(msg, __func__, "?", 0)
 
-#define NICEF(msg) log_okf(__func__, "?", 0, msg, __VA_ARGS__)
-#define INFOF(msg) log_statusf(__func__, "?", 0, msg, __VA_ARGS__)
+#define NICEF(msg, ...) log_okf(__func__, "?", 0, msg, __VA_ARGS__)
+#define INFOF(msg, ...) log_statusf(__func__, "?", 0, msg, __VA_ARGS__)
 
-#define ERRF(fmt) do{}while(0)
-#define WARNF(fmt) do{}while(0)
+#define ERRF(fmt, ...) do{}while(0)
+#define WARNF(fmt, ...) do{}while(0)
 
 #endif
 
