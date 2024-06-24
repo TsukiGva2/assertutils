@@ -1,5 +1,7 @@
-# assertutils.h
+# (fork) assertutils.h
 A tiny C logging library which also implements exceptions and assertions
+
+This fork is for internal use within MyTempo
 
 ![Screenshot_2024-06-22_03-26-05](https://github.com/TsukiGva2/assertutils/assets/71048858/b453759f-352d-48eb-a297-d4a779a07fd3)
 
@@ -42,7 +44,7 @@ but that requires some things to be done first, which takes us to the next secti
 
 ## TODOs (PRs welcome)
 
-- [ ] Improve the build system (don't look at the Makefile, it's frightening)
+- [X] Improve the build system (don't look at the Makefile, it's frightening)
 - [ ] Reduce the macro abuse in assertutils.h
 - [ ] Plan a better error checking model
 - [ ] Add tests

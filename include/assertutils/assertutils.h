@@ -17,23 +17,20 @@ STATUS assertz_quiet(int result);
 
 // thank you fuckit.c =)
 #define ASSERT(f, msg) do{\
-				INFO("calling " #f);\
 				STATUS s = assertz_quiet(f);\
 				if(s != OK) {\
 					ERR(#f " failed!");\
-					WARN("failing gracefully");\
+					WARN("returning FAIL...");\
 					return FAIL;\
 				}\
 			}while(0)
 
 // takes a STATUS function
 #define DEFER(f, label) do{\
-				INFO("calling " #f);\
-				WARN("will defer to :" #label " upon failure");\
 				STATUS s = f;\
 				if (s != OK) {\
-					ERR("'" #f "'" " returned FAIL!");\
-					WARN("deferring to :" #label);\
+					ERR(#f " got FAIL!");\
+					WARN("deferring... " #label);\
 					goto label;\
 				}\
 			}while(0)
