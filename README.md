@@ -13,27 +13,21 @@ with only some portability tweaks here and there (PRs welcome! 😍)
 
 # Building instructions
 
-The code is really, really simple, you just need to run one of the following:
+run:
 
-    $ make
+    $ cmake -B build && cd build && make
 
-Running `make` will simply build the library as a .so file inside the `lib/` directory, it will also generate the proper folder
-structure and headers at `include/`
+if you wish to install the library to your system, do that step and then `make install` afterwards, this will install the library
+to `/usr/local/lib/assertutils` and the header files to `/usr/local/include/assertutils/`.
 
-    # make install
+Remember to run:
 
-`make install` will automatically compile and try to copy the header files to `/usr/local/include/assertutils/` and the library to
-`/usr/local/lib/assertutils/`. You can specify an alternate prefix by passing the DISTDIR option like:
+    # ldconfig /usr/local/lib/assertutils/
 
-    $ make install DISTDIR=some_directory
+Or whatever directory you installed the library to.
 
-The directory will be created automatically, with the correct folder structure (mkdir -p magic).
-
-    $ make example
-
-Running `make example` will compile assertutils along with the examples for you to play around, they are stored in the `bin/` folder,
-currently, there are only 3 basic examples: fail.c, success.c and art.c, feel free to play around and explore some interesting use
-cases, do consider opening a pull request (or an issue) if you find weird/unexpected behaviour.
+The examples were removed until i figure out CMake for good, feel free to play around and use it in your own code (do not use it on production!).
+Do consider opening a pull request (or an issue) if you find weird/unexpected behaviour.
 
 # Platform support
 
