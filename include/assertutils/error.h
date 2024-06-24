@@ -13,7 +13,7 @@ void log_status(const char* msg, const char* fn, const char* file, int line);
 void log_okf(const char* fn, const char* file, int line, const char* msg, ...);
 void log_statusf(const char* fn, const char* file, int line, const char* msg, ...);
 
-#ifndef __RELEASE__
+#ifndef __ASSERTUTILS_RELEASE__
 void log_err(const char* msg, const char* fn, const char* file, int line);
 void log_warn(const char* msg, const char* fn, const char* file, int line);
 
@@ -21,7 +21,7 @@ void log_errf(const char* fn, const char* file, int line, const char* msg, ...);
 void log_warnf(const char* fn, const char* file, int line, const char* msg, ...);
 #endif
 
-#ifndef __RELEASE__
+#ifndef __ASSERTUTILS_RELEASE__
 
 #define ERR(msg) log_err(msg, __func__, __FILE__, __LINE__)
 #define WARN(msg) log_warn(msg, __func__, __FILE__, __LINE__)
